@@ -26,10 +26,14 @@ class app.models.Compass
     Δφ = @radians (lat2 - lat1)
     Δλ = @radians (lon2 - lon1)
     # Such math
-    a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2)
+    a = Math.sin(Δφ / 2) *
+        Math.sin(Δφ / 2) +
+        Math.cos(φ1) *
+        Math.cos(φ2) *
+        Math.sin(Δλ / 2) *
+        Math.sin(Δλ / 2)
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-    dist = R * c
-    return Math.round dist
+    Math.round(R * c)
   calcBearing: ->
     @lat = @radians @latitude()
     @lon = @radians @longitude()
@@ -42,16 +46,16 @@ class app.models.Compass
     lat1 = @radians @lat
     lat2 = @radians to.lat
     y = Math.sin(deltaLon) * Math.cos(lat2)
-    x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(deltaLon)
+    x = Math.cos(lat1) *
+        Math.sin(lat2) -
+        Math.sin(lat1) *
+        Math.cos(lat2) *
+        Math.cos(deltaLon)
     res = @degrees Math.atan2 y, x
-    bearing = Math.round (res + 360) % 360
-    console.log bearing
-    bearing
+    Math.round (res + 360) % 360
   _parseErr: (err) ->
     messages =
       1: 'Permission denied by user'
       2: 'Cant fix GPS position'
       3: 'GPS is taking too long to respond'
     alert(err.message or messages[err.code] or 'Well, this is embarassing...')
-  stop: ->
-    navigator.geolocation.clearWatch _grabGPS
