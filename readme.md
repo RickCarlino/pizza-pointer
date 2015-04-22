@@ -1,6 +1,6 @@
-# MithrilJS Example
+# Pizza Pointer
 
-Showcasing an example MithrilJS app.
+Always know how to get to a Pizza place near [Rev3](http://rev3dupage.com/. Part of a talk I did for [BurbDev](http://www.meetup.com/BurbDev/).
 
 # Is it any good?
 
