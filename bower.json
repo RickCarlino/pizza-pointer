@@ -1,0 +1,21 @@
+{
+  "name": "deleteme",
+  "version": "0.0.0",
+  "authors": [
+    "Rick Carlino <rick.carlino@gmail.com>"
+  ],
+  "description": "Test",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "mithril": "~0.1.34"
+  }
+}

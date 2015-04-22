@@ -1,0 +1,20 @@
+{
+  "name": "mithril-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-coffee": "^2.3.1",
+    "gulp-util": "^3.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-serve": "^0.3.0",
+    "main-bower-files": "^2.5.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "",
+  "license": "ISC"
+}
