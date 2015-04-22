@@ -1,23 +1,4 @@
-links = (_c) ->
-  m('div',
-    [
-      m('ul', [
-        m('li', [ m("a[href='?/nav']", 'Navigate') ])
-        m('li', [ m("a[href='?/about']", 'About') ])
-      ])
-  ])
-
 app.views.navigation = (c) ->
-  twoWayinputBox = (attr) ->
-    m 'input[type=text]',
-      value: attr(),
-      onchange: m.withAttr('value', attr)
-
-  input = ->
-    m 'div', [
-      twoWayinputBox(c.target.lat)
-      twoWayinputBox(c.target.lng)
-    ]
 
   compass = ->
     m 'div', [
@@ -28,20 +9,16 @@ app.views.navigation = (c) ->
 
   status = ->
     m 'div', [
-      m 'p', "Lat: #{c.loc.latitude()}"
-      m 'p', "Lng: #{c.loc.longitude()}"
-      m 'p', "Meters: #{c.loc.distance()}"
+      m 'p', "Your position: #{c.loc.latitude()}, #{c.loc.longitude()}"
+      m 'p', "Distance (M): #{c.loc.distance()}"
     ]
 
   [
-    links(),
-    input(),
     compass(),
     status()
   ]
 
 app.views.about = (c) ->
   [
-    links(c)
     m 'div', c.description()
   ]
